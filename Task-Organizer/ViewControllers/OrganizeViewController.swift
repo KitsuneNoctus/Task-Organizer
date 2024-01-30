@@ -7,11 +7,18 @@
 
 import UIKit
 
+protocol OrganizeDelegate: AnyObject {
+    func updateFilter(title: String)
+}
+
 class OrganizeViewController: UIViewController {
+    
     
     let testValues = ["Daily","Weekly","Fitness","Educational","Chores"]
     
     private var organizeVM = OragnizeTaskViewModel()
+    
+    weak var delegate: OrganizeDelegate?
     
     let selector: UIPickerView = {
         let picker = UIPickerView()
@@ -64,5 +71,12 @@ extension OrganizeViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return organizeVM.filters?[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        guard let filterTitle = organizeVM.filters?[row] else {
+            return
+        }
+        delegate?.updateFilter(title: filterTitle)
     }
 }

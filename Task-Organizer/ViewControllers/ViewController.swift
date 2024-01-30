@@ -50,9 +50,16 @@ class ViewController: UIViewController {
     
     @objc func filterTasks() {
         let vc = OrganizeViewController()
+        vc.delegate = self
         navigationController?.pushViewController(vc, animated: true)
     }
 
 
+}
+
+extension ViewController: OrganizeDelegate {
+    func updateFilter(title: String) {
+        self.taskTitleLabel.text = title
+    }
 }
 
