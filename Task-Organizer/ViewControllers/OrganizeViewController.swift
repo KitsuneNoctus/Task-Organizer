@@ -9,22 +9,41 @@ import UIKit
 
 class OrganizeViewController: UIViewController {
     
+    let testValues = ["Daily","Weekly","Fitness","Educational","Chores"]
+    
+    private var organizeVM = OragnizeTaskViewModel()
+    
     let selector: UIPickerView = {
         let picker = UIPickerView()
         picker.translatesAutoresizingMaskIntoConstraints = false
         return picker
     }()
-    
-    let testValues = ["Daily","Weekly","Fitness","Educational","Chores"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.view.backgroundColor = UIColor.white
+        organizeVM.filters = testValues
 
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.view.backgroundColor = .white
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(saveFilter))
+        
+        selector.dataSource = self
+        selector.delegate = self
+        
+        setup()
+    }
+    
+    func setup() {
+        self.view.addSubview(selector)
+        
+        NSLayoutConstraint.activate([
+            self.selector.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            self.selector.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+            self.selector.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
+            self.selector.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor)
+        ])
     }
     
     @objc func saveFilter() {
@@ -40,8 +59,10 @@ extension OrganizeViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return testValues.count
+        return organizeVM.filters?.count ?? 0
     }
     
-    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return organizeVM.filters?[row]
+    }
 }

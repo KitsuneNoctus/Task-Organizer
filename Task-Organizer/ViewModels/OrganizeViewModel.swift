@@ -14,3 +14,7 @@ import Foundation
 //        self.ordersViewModel = [OrderViewModel]()
 //    }
 //}
+
+struct OragnizeTaskViewModel {
+    var filters: [String]?
+}
