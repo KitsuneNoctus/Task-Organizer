@@ -60,6 +60,7 @@ class OrganizeViewController: UIViewController {
 
 }
 
+//MARK: UIPicker Extension
 extension OrganizeViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1

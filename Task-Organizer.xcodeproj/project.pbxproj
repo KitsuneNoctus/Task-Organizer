@@ -18,6 +18,7 @@
 		BAE64D692B6998C700341F0A /* OrganizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE64D682B6998C700341F0A /* OrganizeViewController.swift */; };
 		BAE64D6B2B6998DD00341F0A /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE64D6A2B6998DD00341F0A /* AddTaskViewController.swift */; };
 		BAE64D6D2B69AAB500341F0A /* OrganizeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE64D6C2B69AAB500341F0A /* OrganizeViewModel.swift */; };
+		BAF361072B6C642F007E8A62 /* ViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF361062B6C642F007E8A62 /* ViewFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		BAE64D682B6998C700341F0A /* OrganizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizeViewController.swift; sourceTree = "<group>"; };
 		BAE64D6A2B6998DD00341F0A /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
 		BAE64D6C2B69AAB500341F0A /* OrganizeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizeViewModel.swift; sourceTree = "<group>"; };
+		BAF361062B6C642F007E8A62 /* ViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 		BAE64D652B6990D000341F0A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				BAF361052B6C641F007E8A62 /* View Factory */,
 				BAE64D392B69905200341F0A /* ViewController.swift */,
 				BAE64D682B6998C700341F0A /* OrganizeViewController.swift */,
 				BAE64D6A2B6998DD00341F0A /* AddTaskViewController.swift */,
@@ -155,6 +158,14 @@
 			children = (
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		BAF361052B6C641F007E8A62 /* View Factory */ = {
+			isa = PBXGroup;
+			children = (
+				BAF361062B6C642F007E8A62 /* ViewFactory.swift */,
+			);
+			path = "View Factory";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,6 +303,7 @@
 				BAE64D692B6998C700341F0A /* OrganizeViewController.swift in Sources */,
 				BAE64D362B69905200341F0A /* AppDelegate.swift in Sources */,
 				BAE64D382B69905200341F0A /* SceneDelegate.swift in Sources */,
+				BAF361072B6C642F007E8A62 /* ViewFactory.swift in Sources */,
 				BAE64D6B2B6998DD00341F0A /* AddTaskViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
