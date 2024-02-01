@@ -45,7 +45,8 @@ class ViewController: UIViewController {
     }
     
     @objc func addTask() {
-        
+        let vc = AddTaskViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc func filterTasks() {
